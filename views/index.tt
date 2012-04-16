@@ -1,0 +1,26 @@
+[%- WRAPPER 'layouts/main.tt'
+  index = 1
+-%]
+[%- BLOCK head %][% END -%]
+[%- pager = app.module.recent_modules(10) %]
+
+<section>
+  <h1 class="section-title left">Requests for Reviews
+    <a href="/feed"><img width="18" style="vertical-align:center" src="/images/feed-icon.png" alt="Feed" /></a>
+  </h1>
+  <div class="right" style="display:none;">
+    <input id="searchbox" type="search" value="" placeholder="Search Module..." />
+  </div>
+  <div class="content">
+    [%- recent_modules = pager.entries %]
+    [%- IF recent_modules.size %]
+      [%- FOREACH module IN recent_modules %]
+        [% render_module(module) %]
+      [%- END # FOREACH module IN recent_modules %]
+    [%- ELSE # IF recent_modules.size %]
+    <p>No module has been posted yet.</p>
+    [%- END # IF recent_modules.size %]
+    [% render_pager(pager) %]
+  </div>
+</section>
+[%- END -%]

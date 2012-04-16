@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      [%- IF title -%]
+      [% config.title | html %] - [% title | html %]
+      [%- ELSE -%]
+      [% config.title | html %] - Social Reviewing for Perl Modules
+      [%- END -%]
+    </title>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for prepan.org" href="/feed" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/prepan.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/css/google-code-prettify/prettify.css" />
+    <link rel="shortcut icon" href="/images/favicon.png" />
+    <script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/prepan.js"></script>
+    <script type="text/javascript">
+      PrePAN.User.csrf_token = '[% csrf_token | html %]';
+      $(function () { PrePAN.Global.init() });
+    </script>
+    [%- PROCESS head -%]
+  </head>
+  <body>
+    <header class="container">
+      <div class="container-inner">
+        <h1><a href="/"><img src="/images/logo.png" alt="PrePAN" /></a></h1>
+        [%- IF user %]
+        <a id="submit-module-button" class="orange-button" href="/module.submit">Submit Module</a>
+        <span id="user-menu-button" class="menu">▼</span>
+        <a id="user-button" href="[% user.path | html %]"><img src="[% user.profile_image_mini | html %]" width="18" height="18" /> <span>[% user.name | html %]</span></a>
+        <span id="notify-button">
+          [%- IF user.unread_count -%]
+          <span class="unread-count">[% user.unread_count | html %]</span>
+          [%- ELSE -%]
+          [% user.unread_count || 0 | html %]
+          [%- END -%]
+        </span>
+        <ul id="user-menu" class="menu-dropdown">
+          <li><a href="[% user.path | html %]">My Page</a></li>
+          <li><a href="[% user.path | html %].edit">Edit Profile</a></li>
+          <li><a href="/info">Info</a></li>
+          <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+        [%- ELSE # user %]
+        <span id="signin-button" class="orange-button">Sign in to PrePAN</span>
+        <ul id="signin-menu" class="menu-dropdown signin-menu">
+          <li><a href="[% signin_with_twitter_url | html %]">Twitter</a></li>
+          <li><a href="[% signin_with_github_url | html %]">GitHub</a></li>
+        </ul>
+        [%- END # user %]
+        [%- IF user -%]
+        <div id="notify">
+          <h1 class="title">Notifications</h1>
+        </div>
+        [%- END -%]
+      </div>
+    </header>
+
+    [%- IF index && !user %]
+    <section id="first-guide">
+      <div class="container-inner">
+        <h1 class="title">
+          PrePAN provide you a place<br />
+          to make discussion about your modules.
+        </h1>
+        <ul>
+          <li>Are there any similar one?</li>
+          <li>I'm not confident in the implementation...</li>
+          <li>How can I distribute the module in keeping with CPAN's convention?</li>
+          <li>Anyway, I want someone to review my module!!!</li>
+        </ul>
+        <div id="guide-signin-container">
+          <a href="[% signin_with_twitter_url | html %]" class="button" id="guide-signin-twitter-button">Sign in with Twitter</a>
+          <a href="[% signin_with_github_url | html %]" class="button" id="guide-signin-github-button">Sign in with github</a>
+        </div>
+        <span id="first-guide-close">CLOSE</span>
+      </div>
+    </section>
+    [%- END %]
+
+    <div id="body" class="container">
+      <div class="container-inner">
+        [% content %]
+      </div>
+    </div>
+
+    <footer class="container">
+      <div class="container-inner">
+        <ul><li><a href="/">Top</a></li><li><a href="/info">Info</a></li>[%- IF user -%]<li><a href="[% user.path | html %]">My Page</a></li>[%- END -%]</ul>
+        <p id="copyright">
+          Copyright &copy; 2011 PrePAN. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26500775-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>

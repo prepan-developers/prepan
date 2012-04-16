@@ -1,0 +1,19 @@
+[%- WRAPPER 'layouts/main.tt' title = 'Recent Modules' -%]
+[%- BLOCK head -%][% END %]
+[%- pager = app.module.recent_modules(3) %]
+[% render_pager(pager) %]
+
+<section>
+  <h2>Reeuests for Reviews</h2>
+  <div class="modules">
+    [%- recent_modules = pager.entries %]
+    [%- IF recent_modules.size %]
+    [%- FOREACH module IN recent_modules %]
+    [% render_module(module) %]
+    [%- END # FOREACH module IN recent_modules %]
+    [%- END # IF recent_modules.size %]
+  </div>
+</section>
+
+[% render_pager(pager) %]
+[%- END -%]

@@ -1,0 +1,26 @@
+user.edit:
+  message:
+    dummy: dummy
+  param:
+    url:         "URL"
+    pause_id:    "PAUSE ID"
+    description: "Description"
+  function:
+    http_url: "[_1] is invalid"
+    length:   "[_1] is too long"
+
+module.edit:
+  message:
+    name.match: Acme::* module cannot be registered.  Acme::* module should be released only by authors' own thought
+    dummy: dummy
+  param:
+    name:        "Name"
+    url:         "URL"
+    summary:     "Summary"
+    description: "Description"
+    status:      "Status"
+  function:
+    http_url: "[_1] is invalid"
+    length:   "[_1] is too long"
+    regexp:   "[_1] is invalid"
+    not_null: "[_1] can't be empty"

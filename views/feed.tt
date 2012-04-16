@@ -1,0 +1,35 @@
+[%~ pager = app.module.recent_modules(10) ~%]
+[%~ recent_modules = pager.entries ~%]
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF
+   xmlns="http://purl.org/rss/1.0/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:content="http://purl.org/rss/1.0/modules/content/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xml:lang="ja">
+  <channel rdf:about="http://prepan.org/feed">
+    <title>PrePAN</title>
+    <link>http://prepan.org/</link>
+    <description>Request for reviews</description>
+    <items>
+      <rdf:Seq>
+        [%- FOREACH module IN recent_modules -%]
+        <rdf:li rdf:resource="http://prepan.org[% module.path | html %]"/>
+        [%- END -%]
+      </rdf:Seq>
+    </items>
+  </channel>
+  [%- FOREACH module IN recent_modules %]
+  <item rdf:about="http://prepan.org[% module.path | html %]">
+    <title>[% module.name | html %][% IF module.summary %] - [% module.summary | html %][% END %]</title>
+    <link>http://prepan.org[% module.path | html %]</link>
+    <description>[% module.description | html %]</description>
+    <content:encoded>
+      <![CDATA[
+        [% module.formatted_description %]
+      ]]></content:encoded>
+    <dc:creator>[% module.user.name | html %]</dc:creator>
+    <dc:date>[% module.created | html %]+00:00</dc:date>
+  </item>
+  [% END # FOREACH module IN recent_modules -%]
+</rdf:RDF>

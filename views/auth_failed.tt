@@ -1,0 +1,19 @@
+[%- WRAPPER 'layouts/main.tt' -%]
+[%- BLOCK head -%][% END %]
+
+<section>
+  <h1 class="section-title left">Error</h1>
+  <div class="content static-content">
+    <div>
+      <h2>Authentication Failed</h2>
+      <p>
+        [%- IF reason -%]
+        [% reason | html %]
+        [%- ELSE -%]
+        Something wrong with authentication process.
+        [%- END -%]
+      </p>
+    </div>
+  </div>
+</section>
+[%- END -%]

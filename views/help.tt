@@ -1,0 +1,34 @@
+[%- WRAPPER 'layouts/main.tt' -%]
+[%- BLOCK head -%][% END %]
+[%- pager = app.module.recent_modules(3) %]
+
+<section>
+  <h1 class="section-title left">PrePAN Help</h1>
+  <div class="right"><input id="searchbox" type="search" value="" placeholder="Search Module..." /></div>
+  <div class="content static-content">
+    <h1>[H1] Looking for servers in Asia</h1>
+    <p>[P] We'd like to make some of the perl.org services (Search CPAN for example) faster for users in Asia; so we're looking for servers (Xen or KVM based servers are fine as long as we can run RHEL) in for example Japan, Taiwan or Singapore. If you think you might be able to help, please email ask@perl.org.</p>
+    <h2>[H2] Related module links on search.cpan.org</h2>
+    <p>[P] Documentation pages on search.cpan.org now contain a list of related modules. For an example see LWP::UserAgent. This list is determined by data created by Perlmonks.org about which modules are discussed together.</p>
+    <h3>[H3] CPAN Search adds Gravatar icons</h3>
+    <p>[P] At the request of Michael G Schwern gravatar icons have been added to author pages on CPAN search. Any author can get a gravatar icon on their page by registering at gravatar.com using their CPAN email alias.</p>
+    <h4>[H4] New search engine</h4>
+    <p>[P] For a long time Search CPAN has used the WAIT module to provide searching of POD documents. Today we started testing the use of Swish-e. Try it and let us know what you think</p>
+    
+    <ul>
+      <li>Modules List Style 1</li>
+      <li>Modules List Style 2</li>
+      <li>Modules List Style 3</li>
+    </ul>
+    
+    <ol>
+      <li>Modules List Style A</li>
+      <li>Modules List Style B</li>
+      <li>Modules List Style C</li>
+    </ol>
+    
+    <blockquote>[BLOCKQUOTE] It's not something we (Robert, Graham & Ask) are in control of, but if you were wondering why search.cpan.org hasn't been getting new module uploads quickly lately it's because of problems with the hardware running the FUnet.fi master CPAN mirror.  It's making all of CPAN "not move" so to speak.<br />PAUSE is still running and taking uploads and no data is being lost anywhere, just a little delayed.<br />Last I heard it should get better sometime this week.</blockquote>
+    <code>[CODE] For a long time Search CPAN has used the WAIT module to provide searching of POD documents. Today we started testing the use of Swish-e. Try it and let us know what you think</code>
+  </div>
+</section>
+[%- END -%]

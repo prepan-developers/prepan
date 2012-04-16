@@ -1,0 +1,83 @@
+[%- FILTER null -%]
+[%- USE Scalar -%]
+
+[%- MACRO render_pager(pager) BLOCK -%]
+<div class="pager">
+  <ul>
+    [%- IF pager.has_prev -%]
+    <li class="prev">
+      <a class="button" href="?page=[% pager.prev_page | html %]">prev</a>
+    </li>
+    [%- END # IF pager.has_prev -%]
+    [%- IF pager.has_next -%]
+    <li class="next">
+      <a class="button" href="?page=[% pager.next_page | html %]">next</a>
+    </li>
+    [%- END # IF pager.has_next -%]
+  </ul>
+</div>
+[%- END -%]
+
+[%- MACRO render_module(module) BLOCK -%]
+<div class="module content-with-icon" id="module-[% module.short_id | html %]">
+  <div class="module-author">
+    <a href="[% module.user.path | html %]" class="user-image">
+      <img src="[% module.user.profile_image | html %]" width="48" height="48" alt="[% module.user.name | html %]">
+    </a>
+  </div>
+
+  <div class="module-body">
+    <h1 class="module-title">
+      <a href="[% module.path | html %]">[% module.name | html %]</a>
+      [%- IF module.summary %]
+      <span class="summary">[% module.summary | html %]</span>
+      [%- END # IF module.summary %]
+    </h1>
+
+    <div>
+      <div class="module-description">
+        [%- SET continue_reading = '<p class="more"><a href="'_ module.path _ '">...Continue reading</a></p>' -%]
+        [% module.formatted_description %][%# trim_html(800, continue_reading) %]
+      </div>
+    </div>
+    <p class="module-info">
+      <a class="user-name" href="[% module.user.path | html %]">[% module.user.name | html %]</a>
+      <span class="timestamp" data-datetime-timestamp="[% module.created.epoch | html %]"></span>
+      <span class="comments">
+        <a href="[% module.path %]#comments">
+          [%- IF module.review_count == 1 -%]
+          [% module.review_count | html %] comment
+          [%- ELSE # IF module.review_count <= 1 -%]
+          [% module.review_count | html %] comments
+          [%- END # IF module.review_count <= 1 -%]
+        </a>
+      </span>
+    </p>
+  </div>
+</div>
+[%- END -%]
+
+[%- MACRO render_timeline_entry(entry, unread_from) BLOCK -%]
+<li[% ' class="unread"' IF !unread_from || entry.created > unread_from %]>
+  <div class="author">
+    [%- IF entry.subject %]
+    <a href="http://prepan.org[% entry.subject.path | html %]" class="user-image mini" target="_blank">
+      <img src="[% entry.subject.profile_image | html %]" width="32" height="32" alt="[% entry.subject.name | html %]">
+    </a>
+    [%- ELSE # IF entry.subject %]
+    <img src="http://prepan.org/images/anonymouse.png" width="32" height="32" alt="anonymouse" />
+    [%- END # IF entry.subject %]
+  </div>
+
+  <div class="body">
+    [%- IF entry.subject %]
+    <a href="http://prepan.org[% entry.subject.path | html %]" target="_blank">[% entry.subject.name | html %]</a>
+    [%- ELSE # IF entry.subject %]
+    Someone
+    [%- END # IF entry.subject %]
+    posted a [% entry.verb | html %]: <a href="http://prepan.org[% entry.object.path | html %]" target="_blank">[% entry.object.name | html %]</a>
+    <div class="timestamp" data-datetime-timestamp="[% entry.created.epoch | html %]"></div>
+  </div>
+</li>
+[%- END -%]
+[%- END # FILTER null -%]

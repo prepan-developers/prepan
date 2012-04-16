@@ -1,0 +1,72 @@
+[%- WRAPPER 'layouts/main.tt' title = 'Sign up' -%]
+[%- BLOCK head -%][% END %]
+<section>
+  <div class="content static-content">
+    <div>
+      <h2>If you've once signed up to PrePAN with [% IF oauth.service == 'twitter' %]GitHub[% ELSE %]Twitter[% END %]</h2>
+      [%- IF oauth.service == 'github' -%]
+      <a href="[% signin_with_twitter_url | html %]" class="button" id="guide-signin-twitter-button">Sign in with Twitter</a>
+      [%- ELSIF oauth.service == 'twitter' -%]
+      <a href="[% signin_with_github_url | html %]" class="button" id="guide-signin-github-button">Sign in with github</a>
+      [%- END -%]
+    </div>
+  </div>
+
+  <h1 class="section-title left">Sign up as a new PrePAN user</h1>
+
+  <div class="content">
+    [%- USE FillInForm %]
+    [% FILTER fillinform fobject => req %]
+    <form id="profile-edit-form" class="edit-form" method="post" action="/auth/signup">
+      [%- IF app.user_info.validator.scalar.get_error_messages.size %]
+      <div class="alert-message error">
+        <ul>
+          [%- FOREACH message IN app.user_info.validator.scalar.get_error_messages %]
+          <li>[% message | html %]</li>
+          [%- END %]
+        </ul>
+      </div>
+      [%- END # IF app.user_info.validator.get_error_messages.size %]
+      <fieldset>
+        <div>
+          <label for="name">Your Name</label>
+          <div class="input">
+            <p class="username">
+              <img src="[% oauth.profile_image_mini | html %]" width="24" height="24" />
+              [% oauth.name | html %]
+            </p>
+          </div>
+        </div>
+        <div>
+          <label for="url">URL</label>
+          <div class="input">
+            <input type="text" id="url" name="url" value="" size="50" placeholder="URL (optional)" />
+          </div>
+        </div>
+        <div>
+          <label for="pause_id">PAUSE ID</label>
+          <div class="input">
+            <input type="text" id="pause_id" name="pause_id" value="" size="30" placeholder="PAUSE ID (optional)" />
+          </div>
+        </div>
+        <div>
+          <label for="bitbucket">Bitbucket</label>
+          <div class="input">
+            <input type="text" id="bitbucket" name="bitbucket" value="" size="30" placeholder="Bitbucket username (optional)" />
+          </div>
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <div class="input">
+            <textarea class="xxlarge" id="description" name="description" cols="80" rows="4" placeholder="Description (optional)"></textarea>
+          </div>
+        </div>
+      </fieldset>
+      <div class="submit">
+        <input type="submit" class="button" value="Sign up" />
+      </div>
+    </form>
+    [% END # FILTER fillinform fobject => post %]
+  </div>
+</section>
+[%- END -%]

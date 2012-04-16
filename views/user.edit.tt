@@ -1,0 +1,81 @@
+[%- WRAPPER 'layouts/main.tt' title = author.name -%]
+[%- BLOCK head -%][% END %]
+<section>
+  <h1 class="section-title left">Edit Your Profile</h1>
+  <div class="content">
+
+    [%- USE FillInForm %]
+    [% FILTER fillinform fobject => req %]
+    <form id="profile-edit-form" class="edit-form" method="post" action="[% author.path('.edit') | html %]">
+      [%- IF app.user_info.validator.scalar.get_error_messages.size %]
+      <div class="alert-message error">
+        <ul>
+          [%- FOREACH message IN app.user_info.validator.scalar.get_error_messages %]
+          <li>[% message | html %]</li>
+          [%- END %]
+        </ul>
+      </div>
+      [%- END # IF app.user_info.validator.get_error_messages.size %]
+      <fieldset>
+        <div>
+          <label for="name">Your Name</label>
+          <div class="input">
+            <p class="username">
+              <img src="[% author.profile_image_mini | html %]" width="24" height="24" />
+              <a href="[% author.path | html %]">[% author.name | html %]</a>
+            </p>
+          </div>
+        </div>
+        <div>
+          <label for="twitter">Twitter</label>
+          <div class="input">
+            [%- IF !author.twitter -%]
+            <a href="[% signin_with_twitter_url | html %]">Sign in with Twitter</a>
+            [%- ELSE -%]
+            <a href="[% author.twitter.url | html %]">[% author.twitter.info.param('screen_name') | html %]</a>
+            [%- END # IF !author.twitter -%]
+          </div>
+        </div>
+        <div>
+          <label for="gihub">GitHub</label>
+          <div>
+            [%- IF !author.github -%]
+            <a href="[% signin_with_github_url | html %]" class="button" id="guide-signin-github-button">Sign in with GitHub</a>
+            [%- ELSE -%]
+            <a href="[% author.github.url | html %]">[% author.github.info.param('login') | html %]</a>
+            [%- END # IF !author.github -%]
+          </div>
+        </div>
+        <div>
+          <label for="url">URL</label>
+          <div class="input">
+            <input type="text" id="url" name="url" value="[% author.url | html %]" size="50" placeholder="URL" />
+          </div>
+        </div>
+        <div>
+          <label for="pause_id">PAUSE ID</label>
+          <div class="input">
+            <input type="text" id="pause_id" name="pause_id" value="[% author.pause_id | html %]" size="30" placeholder="PAUSE ID" />
+          </div>
+        </div>
+        <div>
+          <label for="bitbucket">Bitbucket</label>
+          <div class="input">
+            <input type="text" id="bitbucket" name="bitbucket" value="[% author.bitbucket | html %]" size="30" placeholder="Bitbucket username" />
+          </div>
+        </div>
+        <div>
+          <label for="description">Description</label>
+          <div class="input">
+            <textarea class="xxlarge" id="description" name="description" cols="80" rows="4" placeholder="Description">[% author.description | html %]</textarea>
+          </div>
+        </div>
+      </fieldset>
+      <div class="submit">
+        <input type="submit" class="button" value="Edit" />
+      </div>
+    </form>
+    [% END # FILTER fillinform fobject => post %]
+  </div>
+</section>
+[%- END -%]

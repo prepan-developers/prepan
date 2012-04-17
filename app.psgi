@@ -11,9 +11,8 @@ use Plack::Builder;
 use Plack::Session::Store::DBI;
 use Plack::Session::State::Cookie;
 
-use FindBin;
-use lib "$FindBin::Bin/lib";
-use lib glob "$FindBin::Bin/modules/*/lib";
+use Path::Class;
+use lib file(__FILE__)->dir->subdir('lib')->stringify;
 
 use PrePAN;
 use PrePAN::Web;

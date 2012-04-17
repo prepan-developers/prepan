@@ -2,8 +2,8 @@
 use strict;
 use warnings;
 
-use FindBin;
-use lib "$FindBin::Bin/../lib";
+use Path::Class;
+use lib file(__FILE__)->dir->subdir('../lib')->stringify;
 
 use PrePAN::Config;
 use Qudo::Parallel::Manager;

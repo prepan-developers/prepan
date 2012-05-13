@@ -6,23 +6,23 @@
   <div class="content static-content">
     <div>
       <h2>Solution to Your Problem</h2>
-      <p>You may wirte a useful module for your job or your own purpose. You may think it might be worthy for others. However, you may worry about something like below:</p>
+      <p>You may have written a useful module for your job or your own purpose. You may think it might be useful for others. However, you may worry about something like this:</p>
       <ul>
-        <li>Are there any similar one?</li>
-        <li>I'm not confident in the implementation...</li>
-        <li>How can I distribute the module in keeping with CPAN's convention?</li>
-        <li>Anyway, I want someone to review my module!!!</li>
+        <li>Are there any similar ones?</li>
+        <li>I'm not confident about the implementation...</li>
+        <li>How can I distribute the module in keeping with CPAN's conventions?</li>
+        <li>I want someone to review my module!!!</li>
       </ul>
-      <p>PrePAN provide you a place to make discussion about your modules.</p>
+      <p>PrePAN provides a place to discuss your modules.</p>
 
       <h2>Solution to Problems on CPAN</h2>
-      <p>There have been many problems on CPAN like below:</p>
+      <p>There have been many problems on CPAN:</p>
       <ul>
         <li>Too many modules for us to know all about.</li>
-        <li>There may be many modules for the same purpose. Sometimes, we don't find which is the best.</li>
-        <li>Some modules don't have enough quality.</li>
+        <li>There may be many modules for the same purpose. Sometimes we can't find out which one is the best.</li>
+        <li>Some modules aren't high enough quality.</li>
       </ul>
-      <p>We'll be glad if PrePAN, as a result, will be a help to improve the quality of CPAN for all of us.</p>
+      <p>We'll be glad if PrePAN helps to improve the quality of CPAN for all of us.</p>
     </div>
   </div>
 </section>
@@ -31,8 +31,8 @@
   <h1 class="section-title left">Official Documents You May Have Not Known</h1>
   <div class="content static-content">
     <div>
-      <h2>Must-reads in Advance</h2>
-      <p>CPAN provides some documents for those who want to contribute modules to it. You're supposed to have read them before uploading module to CPAN. You must read at least the documents below in advance.</p>
+      <h2>Must-read documents</h2>
+      <p>CPAN provides some documents for those who want to contribute modules. You're supposed to have read them before uploading module to CPAN. You must read at least the documents below in advance.</p>
       <ul>
         <li>
           <a href="http://www.cpan.org/misc/cpan-faq.html#How_contribute_modules">CPAN Frequently Asked Questions - How do I contribute modules to CPAN?</a>
@@ -65,14 +65,14 @@
       <div style="float:right; margin-left: 10px;">
         <img width="200" src="/images/chrome_extension_screenshot.png" style="border:1px solid #003856" />
       </div>
-      <p>Notification is one of a good parts for modern websites. But it must be annoying that PrePAN always notifies news to you by, for example, e-mail, Twitter mention, or other suchlikes.</p>
-      <p>We currently provides only 2 ways for notification:</p>
+      <p>Notification is one of the good parts of modern websites. But it may be annoying if PrePAN always notifies you by, for example, e-mail, Twitter mention, or similar.</p>
+      <p>We currently provide only two forms of notification:</p>
       <ul>
-        <li>Notification window on the header bar.</li>
+        <li>A notification window on the header bar.</li>
         <li>Chrome extension displayed at the right.</li>
       </ul>
       <p>You can install the extension from <a href="https://chrome.google.com/webstore/detail/fodcmdlcimkbdaijkmnelgcggggegjif">Chrome Web Store</a>.</p>
-      <p>We'll be glad if you would implement ones for Firefox, Safari, etc.</p>
+      <p>We'll be glad if you implement ones for Firefox, Safari, etc.</p>
       <div style="clear:both;"></div>
     </div>
   </div>
@@ -83,14 +83,14 @@
   <div class="content static-content">
     <div>
       <h2>Twitter</h2>
-      <p>Follow our Twitter account for latest updates around PrePAN: @<a href="http://twitter.com/prepanorg">prepanorg</a></p>
-      <p>The admin of this website is @<a href="http://twitter.com/kentaro">kentaro</a> (<a href="http://prepan.org/user/3XR97nG2Gi">PrePAN user page</a>). Feel free to talk to me about PrePAN or anything others ;)</p>
+      <p>Follow our Twitter account for the latest updates regarding PrePAN: @<a href="http://twitter.com/prepanorg">prepanorg</a></p>
+      <p>The admin of this website is @<a href="http://twitter.com/kentaro">kentaro</a> (<a href="http://prepan.org/user/3XR97nG2Gi">PrePAN user page</a>). Feel free to talk to me about PrePAN or anything else ;)</p>
 
       <h2>IRC</h2>
-      <p>This is the best way to send feedbacks, discuss new ideas, and get involved more. Join #prepan on irc.perl.org.</p>
+      <p>This is the best way to send feedback, discuss new ideas, and get involved more. Join #prepan on irc.perl.org.</p>
 
       <h2>GitHub Issues</h2>
-      <p>You can send feedbacks also at <a href="https://github.com/prepan-developers/PrePAN/issues">GitHub issues page</a>.
+      <p>You can also send feedback at <a href="https://github.com/prepan-developers/PrePAN/issues">GitHub issues page</a>.
 </p>
     </div>
   </div>

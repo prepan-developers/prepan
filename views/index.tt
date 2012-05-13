@@ -18,7 +18,7 @@
         [% render_module(module) %]
       [%- END # FOREACH module IN recent_modules %]
     [%- ELSE # IF recent_modules.size %]
-    <p>No module has been posted yet.</p>
+    <p>No modules have been posted yet.</p>
     [%- END # IF recent_modules.size %]
     [% render_pager(pager) %]
   </div>

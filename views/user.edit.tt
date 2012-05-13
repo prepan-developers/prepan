@@ -37,7 +37,7 @@
           </div>
         </div>
         <div>
-          <label for="gihub">GitHub</label>
+          <label for="github">GitHub</label>
           <div>
             [%- IF !author.github -%]
             <a href="[% signin_with_github_url | html %]" class="button" id="guide-signin-github-button">Sign in with GitHub</a>

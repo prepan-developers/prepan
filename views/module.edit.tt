@@ -25,7 +25,7 @@
 
       [%- IF !module %]
       <section>
-        <p>[NOTICE] If you're not familiar with CPAN's manner at all, please give a look at "<a href="/info#section-documents">Official Documents You May Have Not Known</a>"</p>
+        <p>[NOTICE] If you're not familiar with CPAN "manners", please have a look at "<a href="/info#section-documents">Official Documents You May Have Not Known</a>"</p>
       </section>
       [%- END %]
 

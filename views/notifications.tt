@@ -10,7 +10,7 @@
         [% render_timeline_entry(entry, user.unread_from) %]
       [% END # FOR entry IN entries %]
     [%- ELSE # IF entries.size -%]
-    <li>There's been no entry yet.</li>
+    <li>There are no entries yet.</li>
     [%- END # IF entries.size -%]
   [%- ELSE %]
     <li>

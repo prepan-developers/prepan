@@ -65,14 +65,14 @@
     <section id="first-guide">
       <div class="container-inner">
         <h1 class="title">
-          PrePAN provide you a place<br />
-          to make discussion about your modules.
+          PrePAN provides a place<br />
+          to discuss your modules.
         </h1>
         <ul>
-          <li>Are there any similar one?</li>
-          <li>I'm not confident in the implementation...</li>
-          <li>How can I distribute the module in keeping with CPAN's convention?</li>
-          <li>Anyway, I want someone to review my module!!!</li>
+          <li>Are there any similar ones?</li>
+          <li>I'm not confident about the implementation...</li>
+          <li>How can I distribute the module in keeping with CPAN's conventions?</li>
+          <li>I want someone to review my module!!!</li>
         </ul>
         <div id="guide-signin-container">
           <a href="[% signin_with_twitter_url | html %]" class="button" id="guide-signin-twitter-button">Sign in with Twitter</a>
@@ -93,7 +93,7 @@
       <div class="container-inner">
         <ul><li><a href="/">Top</a></li><li><a href="/info">Info</a></li>[%- IF user -%]<li><a href="[% user.path | html %]">My Page</a></li>[%- END -%]</ul>
         <p id="copyright">
-          Copyright &copy; 2011 PrePAN. All Rights Reserved.
+          Copyright &copy; 2011-2012 PrePAN. All Rights Reserved.
         </p>
       </div>
     </footer>

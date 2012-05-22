@@ -4,7 +4,7 @@
 [% render_pager(pager) %]
 
 <section>
-  <h2>Reeuests for Reviews</h2>
+  <h2>Requests for Reviews</h2>
   <div class="modules">
     [%- recent_modules = pager.entries %]
     [%- IF recent_modules.size %]

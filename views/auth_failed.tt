@@ -10,7 +10,7 @@
         [%- IF reason -%]
         [% reason | html %]
         [%- ELSE -%]
-        Something wrong with authentication process.
+        Something went wrong with the authentication process.
         [%- END -%]
       </p>
     </div>

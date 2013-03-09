@@ -25,16 +25,12 @@ requires 'Mouse';
 requires 'JSON';
 requires 'YAML';
 requires 'Digest::SHA1';
-
-# temporary
-requires 'git://github.com/kentaro/Encode-Base58-BigInt.git';
-
+requires 'Encode::Base58::BigInt';
 requires 'Config::ENV' => '0.10';
 requires 'Class::Load';
 requires 'Path::Class';
 requires 'Text::Markdown';
 requires 'HTML::Trim';
-requires 'Encode::Base58::BigInt';
 requires 'Hash::Compact' => '0.05';
 
 requires 'Net::Twitter::Lite';

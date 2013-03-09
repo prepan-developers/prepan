@@ -2,9 +2,24 @@
 
 You need to do three steps to develop PrePAN; setup local database, setup config file and install dependency.
 
+## Clone this repository
+
+```sh
+$ git clone git://github.com/prepan-developers/prepan.git
+$ cd prepan
+```
+
+## carton
+
+PrePAN is utilizing [carton](https://metacpan.org/module/MIYAGAWA/carton-v0.9.10/docs/carton.pod) to manage module dependencies. Install dependencies via carton:
+
+```sh
+$ cpanm carton
+```
+
 ## Local database setting
 
-There is setup script for database setting.  please run below code at PrePAN root directory.
+There is a setup script for database setting. Please run below code at PrePAN root directory.
 
 ```sh
 $ ./script/setup.sh
@@ -19,18 +34,11 @@ $ cp local/development.eg.pl local/development.pl
 ```
 And replace local/development.pl for your environment, for example twitter consumer key and so on.
 
-## Install dependency
-Run below at PrePAN root directory.
-
-```sh
-$ cpanm --installdeps .
-```
-
 # How to start local server
 You can use plackup command to start local server.  Please run below at PrePAN root directory.
 
 ```sh
-$ plackup
+$ carton exec -- plackup
 ```
 
 Enjoy Hacking!!

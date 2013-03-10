@@ -23,6 +23,7 @@ requires 'Template::Provider::Encoding';
 requires 'parent';
 requires 'Mouse';
 requires 'JSON';
+requires 'JSON::XS';
 requires 'YAML';
 requires 'Digest::SHA1';
 requires 'Encode::Base58::BigInt';

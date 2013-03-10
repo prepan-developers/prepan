@@ -44,8 +44,8 @@ task deploy => {
                 for my $service (qw(web worker)) {
                     my $service_dir = get("service_${service}_dir");
 
-                    run "ln -sf $deploy_to/$role.$service.run.sh $service_dir/run";
-                    run "ln -sf $deploy_to/$role.$service.log.run.sh $service_dir/log/run";
+                    run "ln -sf $deploy_to/bin/$role.$service.run.sh $service_dir/run";
+                    run "ln -sf $deploy_to/bin/$role.$service.log.run.sh $service_dir/log/run";
                 }
             } $host;
         },

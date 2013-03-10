@@ -11943,6 +11943,235 @@
          "target" : "Net::HTTP",
          "version" : "6.05"
       },
+      "Net::OAuth" : {
+         "dist" : "Net-OAuth-0.28",
+         "mymeta" : {
+            "abstract" : "An implementation of the OAuth protocol",
+            "author" : [
+               "Keith Grennan <kgrennan@cpan.org>"
+            ],
+            "dynamic_config" : 0,
+            "generated_by" : "Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921",
+            "license" : [
+               "perl_5"
+            ],
+            "meta-spec" : {
+               "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+               "version" : "2"
+            },
+            "name" : "Net-OAuth",
+            "prereqs" : {
+               "build" : {
+                  "requires" : {
+                     "Test::More" : "0.66",
+                     "Test::Warn" : "0.21"
+                  }
+               },
+               "configure" : {
+                  "requires" : {
+                     "Module::Build" : "0.36"
+                  }
+               },
+               "runtime" : {
+                  "requires" : {
+                     "Class::Accessor" : "0.31",
+                     "Class::Data::Inheritable" : "0.06",
+                     "Digest::HMAC_SHA1" : "1.01",
+                     "Digest::SHA" : "5.47",
+                     "Digest::SHA1" : "2.12",
+                     "Encode" : "2.35",
+                     "LWP::UserAgent" : "1",
+                     "URI::Escape" : "3.28"
+                  }
+               }
+            },
+            "provides" : {
+               "Net::OAuth" : {
+                  "file" : "lib/Net/OAuth.pm",
+                  "version" : "0.28"
+               },
+               "Net::OAuth::AccessToken" : {
+                  "file" : "lib/Net/OAuth/AccessToken.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::AccessTokenRequest" : {
+                  "file" : "lib/Net/OAuth/AccessTokenRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::AccessTokenResponse" : {
+                  "file" : "lib/Net/OAuth/AccessTokenResponse.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::Client" : {
+                  "file" : "lib/Net/OAuth/Client.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::ConsumerRequest" : {
+                  "file" : "lib/Net/OAuth/ConsumerRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::Message" : {
+                  "file" : "lib/Net/OAuth/Message.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::ProtectedResourceRequest" : {
+                  "file" : "lib/Net/OAuth/ProtectedResourceRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::Request" : {
+                  "file" : "lib/Net/OAuth/Request.pm",
+                  "version" : "0.28"
+               },
+               "Net::OAuth::RequestTokenRequest" : {
+                  "file" : "lib/Net/OAuth/RequestTokenRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::RequestTokenResponse" : {
+                  "file" : "lib/Net/OAuth/RequestTokenResponse.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::Response" : {
+                  "file" : "lib/Net/OAuth/Response.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::SignatureMethod::HMAC_SHA1" : {
+                  "file" : "lib/Net/OAuth/SignatureMethod/HMAC_SHA1.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::SignatureMethod::HMAC_SHA256" : {
+                  "file" : "lib/Net/OAuth/SignatureMethod/HMAC_SHA256.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::SignatureMethod::PLAINTEXT" : {
+                  "file" : "lib/Net/OAuth/SignatureMethod/PLAINTEXT.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::SignatureMethod::RSA_SHA1" : {
+                  "file" : "lib/Net/OAuth/SignatureMethod/RSA_SHA1.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::UserAuthRequest" : {
+                  "file" : "lib/Net/OAuth/UserAuthRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::UserAuthResponse" : {
+                  "file" : "lib/Net/OAuth/UserAuthResponse.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::V1_0A::AccessTokenRequest" : {
+                  "file" : "lib/Net/OAuth/V1_0A/AccessTokenRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::V1_0A::RequestTokenRequest" : {
+                  "file" : "lib/Net/OAuth/V1_0A/RequestTokenRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::V1_0A::RequestTokenResponse" : {
+                  "file" : "lib/Net/OAuth/V1_0A/RequestTokenResponse.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::V1_0A::UserAuthResponse" : {
+                  "file" : "lib/Net/OAuth/V1_0A/UserAuthResponse.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::XauthAccessTokenRequest" : {
+                  "file" : "lib/Net/OAuth/XauthAccessTokenRequest.pm",
+                  "version" : "0"
+               },
+               "Net::OAuth::YahooAccessTokenRefreshRequest" : {
+                  "file" : "lib/Net/OAuth/YahooAccessTokenRefreshRequest.pm",
+                  "version" : "0"
+               }
+            },
+            "release_status" : "stable",
+            "resources" : {
+               "license" : [
+                  "http://dev.perl.org/licenses/"
+               ]
+            },
+            "version" : "0.28"
+         },
+         "name" : "Net::OAuth",
+         "pathname" : "K/KG/KGRENNAN/Net-OAuth-0.28.tar.gz",
+         "provides" : {
+            "Net::OAuth" : {
+               "file" : "Net/OAuth.pm",
+               "version" : "0.28"
+            },
+            "Net::OAuth::AccessToken" : {
+               "file" : "Net/OAuth/AccessToken.pm"
+            },
+            "Net::OAuth::AccessTokenRequest" : {
+               "file" : "Net/OAuth/AccessTokenRequest.pm"
+            },
+            "Net::OAuth::AccessTokenResponse" : {
+               "file" : "Net/OAuth/AccessTokenResponse.pm"
+            },
+            "Net::OAuth::Client" : {
+               "file" : "Net/OAuth/Client.pm"
+            },
+            "Net::OAuth::ConsumerRequest" : {
+               "file" : "Net/OAuth/ConsumerRequest.pm"
+            },
+            "Net::OAuth::Message" : {
+               "file" : "Net/OAuth/Message.pm"
+            },
+            "Net::OAuth::ProtectedResourceRequest" : {
+               "file" : "Net/OAuth/ProtectedResourceRequest.pm"
+            },
+            "Net::OAuth::Request" : {
+               "file" : "Net/OAuth/Request.pm",
+               "version" : "0.28"
+            },
+            "Net::OAuth::RequestTokenRequest" : {
+               "file" : "Net/OAuth/RequestTokenRequest.pm"
+            },
+            "Net::OAuth::RequestTokenResponse" : {
+               "file" : "Net/OAuth/RequestTokenResponse.pm"
+            },
+            "Net::OAuth::Response" : {
+               "file" : "Net/OAuth/Response.pm"
+            },
+            "Net::OAuth::SignatureMethod::HMAC_SHA1" : {
+               "file" : "Net/OAuth/SignatureMethod/HMAC_SHA1.pm"
+            },
+            "Net::OAuth::SignatureMethod::HMAC_SHA256" : {
+               "file" : "Net/OAuth/SignatureMethod/HMAC_SHA256.pm"
+            },
+            "Net::OAuth::SignatureMethod::PLAINTEXT" : {
+               "file" : "Net/OAuth/SignatureMethod/PLAINTEXT.pm"
+            },
+            "Net::OAuth::SignatureMethod::RSA_SHA1" : {
+               "file" : "Net/OAuth/SignatureMethod/RSA_SHA1.pm"
+            },
+            "Net::OAuth::UserAuthRequest" : {
+               "file" : "Net/OAuth/UserAuthRequest.pm"
+            },
+            "Net::OAuth::UserAuthResponse" : {
+               "file" : "Net/OAuth/UserAuthResponse.pm"
+            },
+            "Net::OAuth::V1_0A::AccessTokenRequest" : {
+               "file" : "Net/OAuth/V1_0A/AccessTokenRequest.pm"
+            },
+            "Net::OAuth::V1_0A::RequestTokenRequest" : {
+               "file" : "Net/OAuth/V1_0A/RequestTokenRequest.pm"
+            },
+            "Net::OAuth::V1_0A::RequestTokenResponse" : {
+               "file" : "Net/OAuth/V1_0A/RequestTokenResponse.pm"
+            },
+            "Net::OAuth::V1_0A::UserAuthResponse" : {
+               "file" : "Net/OAuth/V1_0A/UserAuthResponse.pm"
+            },
+            "Net::OAuth::XauthAccessTokenRequest" : {
+               "file" : "Net/OAuth/XauthAccessTokenRequest.pm"
+            },
+            "Net::OAuth::YahooAccessTokenRefreshRequest" : {
+               "file" : "Net/OAuth/YahooAccessTokenRefreshRequest.pm"
+            }
+         },
+         "target" : "Net::OAuth",
+         "version" : "0.28"
+      },
       "Net::SSLeay" : {
          "dist" : "Net-SSLeay-1.52",
          "mymeta" : {

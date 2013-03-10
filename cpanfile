@@ -34,6 +34,7 @@ requires 'Text::Markdown';
 requires 'HTML::Trim';
 requires 'Hash::Compact' => '0.05';
 
+requires 'Net::OAuth';
 requires 'Net::Twitter::Lite';
 
 requires 'LWP';

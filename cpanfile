@@ -42,6 +42,10 @@ requires 'Mozilla::CA';
 requires 'Qudo';
 requires 'Qudo::Parallel::Manager';
 
+on develop => sub {
+    recommends 'git://github.com/kentaro/cinnamon.git';
+};
+
 on test => sub {
     requires 'Module::Install';
     requires 'Project::Libs';

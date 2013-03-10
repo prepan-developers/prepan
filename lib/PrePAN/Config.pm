@@ -10,11 +10,13 @@ common {
 };
 
 config production  => {
-    eval { load root->file('../../shared/production.pl')->stringify }
+    eval { load root->file('local/production.pl')->stringify  }
 };
+
 config development => {
-    eval { load root->file('local/development.pl')->stringify       }
+    eval { load root->file('local/development.pl')->stringify }
 };
+
 config test        => { parent 'development' };
 
 !!1;

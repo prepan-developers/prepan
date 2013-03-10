@@ -1,7 +1,7 @@
 requires 'Plack';
 requires 'Plack::Middleware::Session';
 requires 'Plack::Middleware::ReverseProxy';
-requires 'Plack::Handler::Starman';
+requires 'Starman';
 
 requires 'Amon2';
 requires 'Amon2::Auth';

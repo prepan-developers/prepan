@@ -74,7 +74,7 @@ task deploy => {
         my $branch    = get('branch');
 
         remote {
-            run "cd $deploy_to && git fetch origin && git checkout -q $branch && git submodule update --init && carton install";
+            run "cd $deploy_to && git checkout . && git fetch origin && git checkout -q $branch && git submodule update --init && carton install";
         } $host;
     },
 };

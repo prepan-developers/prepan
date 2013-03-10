@@ -113,7 +113,7 @@ for my $service (qw(web worker)) {
             my $service = get("service_${service}_dir");
 
             remote {
-                sudo "svstat $application";
+                sudo "svstat $service";
             } $host;
         },
     };

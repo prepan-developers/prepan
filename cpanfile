@@ -20,7 +20,6 @@ requires 'Template';
 requires 'Template::Plugin::FillInForm';
 requires 'Template::Provider::Encoding';
 
-requires 'parent';
 requires 'Mouse';
 requires 'JSON';
 requires 'JSON::XS';

@@ -104,7 +104,7 @@ for my $service (qw(web worker)) {
             my $service = get("service_${service}_dir");
 
             remote {
-                run "svc -t $service";
+                sudo "svc -t $service";
             } $host;
         },
 

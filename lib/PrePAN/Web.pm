@@ -31,12 +31,12 @@ __PACKAGE__->add_trigger(
         $c->user && $c->app->user($c->user);
         $c->app->page($c->req->param('page'));
 
-        if ($c->req->path =~ m{^/user/([[:alnum:]]{10})}o) {
+        if ($c->req->path =~ m{^/user/([[:alnum:]]{10,})}o) {
             $c->data(author_id => $1);
             $c->author && $c->app->author($c->author);
         }
 
-        if ($c->req->path =~ m{^/module/([[:alnum:]]{10})}o) {
+        if ($c->req->path =~ m{^/module/([[:alnum:]]{10,})}o) {
             $c->data(module_id => $1);
         }
 

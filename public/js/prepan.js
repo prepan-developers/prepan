@@ -1,4 +1,4 @@
-PrePAN      = {}
+PrePAN      = {};
 PrePAN.User = {};
 PrePAN.Util = {
     formatDateTime : function (date) {
@@ -12,7 +12,7 @@ PrePAN.Util = {
         return [[year, month, day].join('-'), [hour, minute, second].join(':')].join(' ');
     }
 };
-  
+
 PrePAN.Global = {
     init : function (args) {
         this.initHeader(args);
@@ -136,7 +136,7 @@ PrePAN.Module = {
                     type : 'GET',
                     url  :  '/api/module.vote',
                     data : {
-                        module_id  : PrePAN.Module.id,
+                        module_id  : PrePAN.Module.id
                     },
                     success: function (res) {
                         var error = res.already_voted ?
@@ -144,7 +144,7 @@ PrePAN.Module = {
                             res.login_required ?
                             "You need sign up/in to mark as good to this module" :
                             undefined;
-                        
+
                         if (error) {
                             $this.unbind('click');
                             $this.click(function () {

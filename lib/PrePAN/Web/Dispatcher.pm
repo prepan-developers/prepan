@@ -153,21 +153,21 @@ post '/module.submit' => sub {
     }
 };
 
-get qr{^/module/([[:alnum:]]{10})$}o => sub {
+get qr{^/module/([[:alnum:]]{10,})$}o => sub {
     my ($c) = @_;
     return $c->res_404 if !$c->check_module;
 
     $c->render('module');
 };
 
-get qr{^/module/([[:alnum:]]{10}).edit$}o => sub {
+get qr{^/module/([[:alnum:]]{10,}).edit$}o => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_module_owner;
 
     $c->render('module.edit');
 };
 
-post qr{^/module/([[:alnum:]]{10}).edit$}o => sub {
+post qr{^/module/([[:alnum:]]{10,}).edit$}o => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_module_owner;
 
@@ -188,7 +188,7 @@ post qr{^/module/([[:alnum:]]{10}).edit$}o => sub {
     }
 };
 
-post qr{^/module/([[:alnum:]]{10})/review.create$}o => sub {
+post qr{^/module/([[:alnum:]]{10,})/review.create$}o => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_user;
 
@@ -210,21 +210,21 @@ post qr{^/module/([[:alnum:]]{10})/review.create$}o => sub {
 };
 
 # user
-get qr{^/user/(?:[[:alnum:]]{10})$}o => sub {
+get qr{^/user/(?:[[:alnum:]]{10,})$}o => sub {
     my ($c) = @_;
     return $c->res_404 if !$c->check_author;
 
     $c->render('user');
 };
 
-get qr{^/user/(?:[[:alnum:]]{10})\.edit$}o => sub {
+get qr{^/user/(?:[[:alnum:]]{10,})\.edit$}o => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_privilege;
 
     $c->render('user.edit');
 };
 
-post qr{^/user/(?:[[:alnum:]]{10})\.edit$}o => sub {
+post qr{^/user/(?:[[:alnum:]]{10,})\.edit$}o => sub {
     my ($c) = @_;
     return $c->res_403 if !$c->check_privilege;
 
